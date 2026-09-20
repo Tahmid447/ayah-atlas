@@ -4,7 +4,7 @@
 
 The user asked for the full application in PROJECT_SPEC.md, with an attached Quran reference image and https://www.equraninstitute.com/quranreading/index.htm. They explicitly authorized using original GIFs and researching alternative fonts rather than stopping when font identification proved difficult. They were frustrated by an earlier premature stop.
 
-The latest user request is to **preserve all work/data and a durable memory before switching accounts**, then continue later. Feature work is paused for that reason. Do not restart the project or replace the existing app with a new starter. Do not modify VideoScope. Do not pay for services or deploy a production website without explicit authorization.
+The latest user request is to **preserve all work/data and a durable memory before switching accounts**, then continue later. The user subsequently resumed and asked to finish. Files/database/browser notes were checked intact; the remote backup was still pending and is being completed first. Do not restart the project or replace the existing app with a new starter. Do not modify VideoScope. Do not pay for services or deploy a production website without explicit authorization.
 
 Read AGENTS.md, PROJECT_SPEC.md, IMPLEMENTATION_CHECKLIST.md, docs/VERIFICATION.md, docs/MAINTENANCE.md, and docs/TYPOGRAPHY.md before continuing.
 

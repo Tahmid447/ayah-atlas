@@ -55,3 +55,7 @@ next-env.d.ts
 .dev.vars*
 
 /data/research-archive/
+
+__pycache__/
+*.pyc
+/data/recovery-manifest.json

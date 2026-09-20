@@ -1,6 +1,6 @@
 # Ayah Atlas
 
-**Recovery checkpoint — 20 September 2026.** A working local Quran reader, published-source research workspace, evidence notebook, and cited talk studio. Work was paused at the user's request to preserve progress before changing ChatGPT/Codex accounts.
+**Recovery checkpoint — 20 September 2026.** A working local Quran reader, published-source research workspace, evidence notebook, and cited talk studio. Progress is checkpointed for recovery across account changes. The user has resumed; implementation and verification continue from the preserved files.
 
 Start with **[RESUME_HERE.md](RESUME_HERE.md)**. It records current state, outstanding work, verification, and recovery steps. The complete original brief is [PROJECT_SPEC.md](PROJECT_SPEC.md). This is a new project, unrelated to VideoScope.
 

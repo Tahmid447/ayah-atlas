@@ -19,6 +19,7 @@ import { dictionary } from "@/lib/i18n";
 import type { Language } from "@/lib/topics";
 import type { Source, Chapter } from "@/lib/types";
 import { api, Load, useLocal, downloadText } from "./shared";
+import { RestoreWorkspace } from "./restore";
 import specimen from "@/data/indopak-specimen.json";
 import { installReadingPack, removeReadingPack } from "@/lib/offline";
 export function SourcesView({
@@ -246,6 +247,7 @@ export function SourcesView({
               >
                 Export device backup
               </Button>
+              <RestoreWorkspace />
             </div>
           </section>
           <div className="source-notes">

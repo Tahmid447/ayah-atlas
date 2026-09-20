@@ -13,7 +13,7 @@
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
     "db:generate": "drizzle-kit generate",
     "typecheck": "tsc --noEmit",
-    "test": "node --test tests/core.test.ts tests/api.mjs tests/offline.test.ts",
+    "test": "node --test tests/core.test.ts tests/api.mjs tests/offline.test.ts tests/backup.test.ts",
     "test:integrity": "python3 tests/integrity.py",
     "test:research": "python3 tests/research.py",
     "import:corpus": "python3 scripts/imports/corpus.py",

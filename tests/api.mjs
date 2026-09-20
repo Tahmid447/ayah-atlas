@@ -1,5 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 const base = process.env.TEST_BASE_URL || "http://localhost:4173";
 async function get(path) {
   const r = await fetch(base + path);
@@ -119,4 +120,13 @@ test("export response preserves Arabic and private cache policy", async () => {
   assert.equal(await r.text(), content);
   assert.match(r.headers.get("content-disposition"), /attachment/);
   assert.equal(r.headers.get("cache-control"), "private, no-store");
+});
+test("complete device backup exports without the old small-request truncation", async () => {
+  const content = readFileSync(new URL("../docs/test-results/device-workspace.json", import.meta.url), "utf8");
+  const body = new URLSearchParams({ name: "ayah-atlas-device-backup.json", content });
+  assert.ok(body.toString().length > 80000);
+  const r = await fetch(base + "/api/export", {method:"POST",body});
+  assert.equal(r.status,200);
+  assert.equal(await r.text(),content);
+  assert.match(r.headers.get("content-type"),/application\/json/);
 });

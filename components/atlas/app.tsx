@@ -93,6 +93,10 @@ function Workspace() {
   const [bookmarks, setBookmarks] = useLocal<string[]>("atlas.bookmarks", []);
   const [items, setItems] = useLocal<SavedEvidence[]>("atlas.notebook", []);
   const [talk, setTalk] = useLocal<Talk>("atlas.talk", defaultTalk);
+  const [recoveredTalk, setRecoveredTalk] = useLocal<Talk | null>(
+    "atlas.recoveredTalk",
+    null,
+  );
   const [view, setView] = useState<View>("read");
   const [query, setQuery] = useState("");
   const [lens, setLens] = useState<string | null>(null);
@@ -385,6 +389,24 @@ function Workspace() {
               />
             </>
           )}{" "}
+          {recoveredTalk && (view === "notebook" || view === "talk") && (
+            <div className="status-note">
+              A recovered talk is available.{" "}
+              <Button
+                variant="outline"
+                onClick={() => {
+                  setTalk(recoveredTalk);
+                  setRecoveredTalk(talk);
+                  navigate("talk");
+                }}
+              >
+                Switch to recovered talk
+              </Button>
+              <p>
+                Your other draft remains preserved and can be switched back.
+              </p>
+            </div>
+          )}
           {view === "notebook" && (
             <Notebook
               lang={lang}

@@ -12,4 +12,4 @@
 
 ## Recovery checkpoint
 
-The user paused on 2026-09-20 to switch accounts. Read `RESUME_HERE.md` before continuing. Preserve this project, imported data, source editions, and browser-state backup. No production deployment authorization exists. The private GitHub recovery backup is authorized. Do not confuse reserved configuration fields or schema tables with implemented integrations. Maintain the honest status/test report.
+The user paused on 2026-09-20 to switch accounts and then resumed. Recovery checks and fixes were completed; no loss was found in the verified source/corpus/browser state. Read `RESUME_HERE.md` before continuing. Preserve this project, imported data, source editions, and browser-state backup. No production deployment authorization exists. The private GitHub recovery backup is authorized. Do not confuse reserved configuration fields or schema tables with implemented integrations. Maintain the honest status/test report.

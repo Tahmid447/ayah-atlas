@@ -1,7 +1,7 @@
 {
   "transientFailures": [],
   "queries": 30,
-  "meanRecallAt54": 0.8,
+  "meanRecallAt54": 0.8333333333333334,
   "allReferencesResolve": true,
   "semanticSupport": "Not evaluated by a human; reference resolution is not proof of interpretive support.",
   "method": "30 queries, 10 source-verified benchmark themes, three languages; expected refs are evaluation seeds only; exact source search uses full corpus FTS and topic aliases.",
@@ -26,7 +26,7 @@
       "referencesResolved": true,
       "returned": 54,
       "totalResults": 59,
-      "seconds": 0.47
+      "seconds": 0.28
     },
     {
       "topic": "backbiting",
@@ -48,7 +48,7 @@
       "referencesResolved": true,
       "returned": 54,
       "totalResults": 59,
-      "seconds": 0.18
+      "seconds": 0.22
     },
     {
       "topic": "backbiting",
@@ -70,7 +70,7 @@
       "referencesResolved": true,
       "returned": 54,
       "totalResults": 59,
-      "seconds": 0.19
+      "seconds": 0.13
     },
     {
       "topic": "hypocrisy",
@@ -84,12 +84,12 @@
       ],
       "recallAt54": 1.0,
       "positions": {
-        "h:sunnah-bukhari-33": 20
+        "h:sunnah-bukhari-33": 9
       },
       "referencesResolved": true,
       "returned": 54,
-      "totalResults": 550,
-      "seconds": 0.77
+      "totalResults": 568,
+      "seconds": 0.59
     },
     {
       "topic": "hypocrisy",
@@ -108,7 +108,7 @@
       "referencesResolved": true,
       "returned": 54,
       "totalResults": 550,
-      "seconds": 0.65
+      "seconds": 0.41
     },
     {
       "topic": "hypocrisy",
@@ -127,7 +127,7 @@
       "referencesResolved": true,
       "returned": 54,
       "totalResults": 550,
-      "seconds": 0.64
+      "seconds": 0.4
     },
     {
       "topic": "honesty",
@@ -142,7 +142,7 @@
       "referencesResolved": true,
       "returned": 54,
       "totalResults": 575,
-      "seconds": 0.7
+      "seconds": 0.51
     },
     {
       "topic": "honesty",
@@ -151,13 +151,17 @@
       "expected": [
         "9:119"
       ],
-      "found": [],
-      "recallAt54": 0.0,
-      "positions": {},
+      "found": [
+        "9:119"
+      ],
+      "recallAt54": 1.0,
+      "positions": {
+        "9:119": 4
+      },
       "referencesResolved": true,
       "returned": 54,
       "totalResults": 575,
-      "seconds": 0.56
+      "seconds": 0.41
     },
     {
       "topic": "honesty",
@@ -172,7 +176,7 @@
       "referencesResolved": true,
       "returned": 54,
       "totalResults": 575,
-      "seconds": 0.73
+      "seconds": 0.37
     },
     {
       "topic": "charity",
@@ -187,7 +191,7 @@
       "referencesResolved": true,
       "returned": 54,
       "totalResults": 4105,
-      "seconds": 2.06
+      "seconds": 1.65
     },
     {
       "topic": "charity",
@@ -202,7 +206,7 @@
       "referencesResolved": true,
       "returned": 54,
       "totalResults": 4105,
-      "seconds": 1.98
+      "seconds": 1.22
     },
     {
       "topic": "charity",
@@ -217,7 +221,7 @@
       "referencesResolved": true,
       "returned": 54,
       "totalResults": 4105,
-      "seconds": 1.71
+      "seconds": 1.26
     },
     {
       "topic": "justice",
@@ -236,7 +240,7 @@
       "referencesResolved": true,
       "returned": 54,
       "totalResults": 923,
-      "seconds": 1.07
+      "seconds": 0.75
     },
     {
       "topic": "justice",
@@ -250,12 +254,12 @@
       ],
       "recallAt54": 1.0,
       "positions": {
-        "4:135": 25
+        "4:135": 30
       },
       "referencesResolved": true,
       "returned": 54,
       "totalResults": 923,
-      "seconds": 0.93
+      "seconds": 0.82
     },
     {
       "topic": "justice",
@@ -274,7 +278,7 @@
       "referencesResolved": true,
       "returned": 54,
       "totalResults": 923,
-      "seconds": 0.99
+      "seconds": 0.66
     },
     {
       "topic": "parents",
@@ -293,7 +297,7 @@
       "referencesResolved": true,
       "returned": 54,
       "totalResults": 4090,
-      "seconds": 2.57
+      "seconds": 1.81
     },
     {
       "topic": "parents",
@@ -307,12 +311,12 @@
       ],
       "recallAt54": 1.0,
       "positions": {
-        "17:23": 12
+        "17:23": 3
       },
       "referencesResolved": true,
       "returned": 54,
       "totalResults": 4090,
-      "seconds": 2.27
+      "seconds": 1.84
     },
     {
       "topic": "parents",
@@ -331,7 +335,7 @@
       "referencesResolved": true,
       "returned": 54,
       "totalResults": 4090,
-      "seconds": 2.31
+      "seconds": 1.6
     },
     {
       "topic": "patience",
@@ -350,7 +354,7 @@
       "referencesResolved": true,
       "returned": 54,
       "totalResults": 650,
-      "seconds": 0.95
+      "seconds": 0.56
     },
     {
       "topic": "patience",
@@ -369,7 +373,7 @@
       "referencesResolved": true,
       "returned": 54,
       "totalResults": 650,
-      "seconds": 1.0
+      "seconds": 0.45
     },
     {
       "topic": "patience",
@@ -388,7 +392,7 @@
       "referencesResolved": true,
       "returned": 54,
       "totalResults": 650,
-      "seconds": 0.68
+      "seconds": 0.46
     },
     {
       "topic": "gratitude",
@@ -402,12 +406,12 @@
       ],
       "recallAt54": 1.0,
       "positions": {
-        "14:7": 32
+        "14:7": 39
       },
       "referencesResolved": true,
       "returned": 54,
-      "totalResults": 454,
-      "seconds": 0.4
+      "totalResults": 475,
+      "seconds": 0.3
     },
     {
       "topic": "gratitude",
@@ -421,12 +425,12 @@
       ],
       "recallAt54": 1.0,
       "positions": {
-        "14:7": 32
+        "14:7": 26
       },
       "referencesResolved": true,
       "returned": 54,
       "totalResults": 454,
-      "seconds": 0.34
+      "seconds": 0.25
     },
     {
       "topic": "gratitude",
@@ -445,7 +449,7 @@
       "referencesResolved": true,
       "returned": 54,
       "totalResults": 454,
-      "seconds": 0.34
+      "seconds": 0.24
     },
     {
       "topic": "repentance",
@@ -459,12 +463,12 @@
       ],
       "recallAt54": 1.0,
       "positions": {
-        "39:53": 24
+        "39:53": 33
       },
       "referencesResolved": true,
       "returned": 54,
       "totalResults": 1028,
-      "seconds": 0.91
+      "seconds": 0.73
     },
     {
       "topic": "repentance",
@@ -483,7 +487,7 @@
       "referencesResolved": true,
       "returned": 54,
       "totalResults": 1028,
-      "seconds": 0.83
+      "seconds": 0.63
     },
     {
       "topic": "repentance",
@@ -502,7 +506,7 @@
       "referencesResolved": true,
       "returned": 54,
       "totalResults": 1028,
-      "seconds": 0.81
+      "seconds": 0.6
     },
     {
       "topic": "moses",
@@ -521,7 +525,7 @@
       "referencesResolved": true,
       "returned": 54,
       "totalResults": 2827,
-      "seconds": 1.76
+      "seconds": 1.25
     },
     {
       "topic": "moses",
@@ -540,7 +544,7 @@
       "referencesResolved": true,
       "returned": 54,
       "totalResults": 2827,
-      "seconds": 1.75
+      "seconds": 1.16
     },
     {
       "topic": "moses",
@@ -559,7 +563,7 @@
       "referencesResolved": true,
       "returned": 54,
       "totalResults": 2827,
-      "seconds": 2.26
+      "seconds": 1.34
     }
   ]
 }

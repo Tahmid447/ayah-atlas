@@ -399,6 +399,7 @@ export async function research(
       "No generative synthesis or semantic model is enabled.",
       "Hadith coverage is limited to the imported collection.",
       "Lexical relevance is not a scholarly judgment of interpretive support.",
+      "Original query qualifiers are retained. Word matching cannot determine whether a passage affirms or negates a premise; inspect the full context.",
       "No identified human scholarly review has been recorded.",
     ],
   };

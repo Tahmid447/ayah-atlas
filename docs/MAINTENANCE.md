@@ -22,7 +22,7 @@ Create a server-only `.dev.vars` file with a random EDITORIAL_TOKEN of at least 
 
 Canonical/source downloads are reproducible but retained in the recovery release for independence from future provider changes. Original assets and manifests are tracked. Large SQLite/raw/research directories are excluded from Git and included in the recovery archive. Archive excludes node_modules, dist, caches, local secrets, and transient runtime files.
 
-Guest notes/talks/preferences are localStorage entries beginning `atlas.`. Sources → Export device backup exports those entries, without editorial tokens. The recovery file is `docs/test-results/device-workspace.json`. Only restore recognized keys after validating the object/format; do not evaluate backup content as code. Automatic import UI remains pending. The active browser's storage is not guaranteed to follow a ChatGPT account change.
+Guest notes/talks/preferences are localStorage entries beginning `atlas.`. Sources → Export device backup exports those entries, without editorial tokens. The recovery file is `docs/test-results/device-workspace.json`. Only restore recognized keys after validating the object/format; do not evaluate backup content as code. Sources → Restore device backup now validates format, content checksums and source provenance, then merges notes and preserves a different active talk. Repeated restores cannot overwrite a second recovered talk; keep all JSON backups. The active browser's storage is not guaranteed to follow a ChatGPT account change.
 
 Use SQLite's backup API for a consistent live database snapshot; do not copy only a database file while discarding its WAL. The checkpoint records review rows separately because canonical data can be reinstalled.
 

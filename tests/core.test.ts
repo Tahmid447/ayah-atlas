@@ -36,3 +36,10 @@ test("no English-only tokenizer requirement for Bengali/Japanese", () => {
   assert.ok(searchTerms("অপবাদ").includes("অপবাদ"));
   assert.ok(searchTerms("忍耐").includes("忍耐"));
 });
+test("topic expansion retains negation, narrator and context qualifiers", () => {
+  const terms = searchTerms("backbiting not permitted narrated Abu Hurayrah context");
+  for (const term of ["not", "permitted", "narrated", "abu", "hurayrah", "context"])
+    assert.ok(terms.includes(term), term);
+  assert.ok(searchTerms("গীবত নয়").includes("নয়"));
+  assert.ok(searchTerms("陰口ではない").includes("陰口ではない"));
+});

@@ -18,13 +18,16 @@
 - [x] Setup/maintenance/continuation documentation; device backup export.
 - [ ] Exact selectable reference font, per-ayah image coordinates.
 - [ ] Broad hadith/interpretive-tradition coverage; professional review.
-- [ ] Higher recall, qualifier tests, robust research retry/jobs.
+- [x] Query qualifier/negation/narrator retention tests and working failure retry.
+- [ ] Higher recall and durable research job history.
 - [ ] Optional semantic/model synthesis with evaluated claim support (not enabled/integrated).
 - [ ] Expanded glossary/story emphasis/source candidate publication workflow.
 - [ ] Complete revision diffs/translation notices and correction invalidation.
-- [ ] Validated device-backup import UI; optional account sync APIs/auth.
-- [ ] Print/PDF and enlarged typography QA, complete accessibility/dark-mode audit.
+- [x] Validated device-backup import UI with source checks and draft preservation.
+- [ ] Optional account sync APIs/auth.
+- [x] 150/200% typography control, mobile/desktop overflow and visible keyboard focus checks.
+- [ ] Print/PDF, full browser zoom, complete accessibility/dark-mode audit.
 - [ ] Docker execution test.
 - [ ] Production publication — separate explicit authorization and rights/seeding checks required.
 
-Paused at the user's request for account-switch recovery. See RESUME_HERE.md; do not reset completed work.
+Resumed successfully after the account interruption; source/data and browser notes were verified intact. The private full recovery archive and updated source are saved. See RESUME_HERE.md; do not reset completed work.

@@ -1,0 +1,85 @@
+
+$ npm run typecheck
+
+> ayah-atlas@0.1.0 typecheck
+> tsc --noEmit
+
+
+$ npm run lint
+
+> ayah-atlas@0.1.0 lint
+> eslint . --ignore-pattern dist --ignore-pattern .next
+
+
+$ npm test
+
+> ayah-atlas@0.1.0 test
+> node --test tests/core.test.ts tests/api.mjs tests/offline.test.ts tests/backup.test.ts
+
+✔ source coverage comes from the imported local corpus (94.714042ms)
+✔ verse contains real three-language translations and range commentary (62.709917ms)
+✔ invalid Quran reference is rejected without generating text (61.018917ms)
+✔ benchmark hadith reference resolves with attributed grade (374.510125ms)
+✔ editorial action is protected and correction does not change scripture (9.731167ms)
+✔ source documents cannot trigger tools through retrieval (107.28425ms)
+✔ citation checker separates exact text from resolved references (58.692417ms)
+✔ private request headers prohibit shared-cache notebook leakage (237.048167ms)
+✔ complete hadith quotation checks every language and rejects tampering (50.823791ms)
+✔ story explorer groups source passages across surahs (161.249917ms)
+✔ export response preserves Arabic and private cache policy (7.628083ms)
+✔ complete device backup exports without the old small-request truncation (18.894792ms)
+✔ actual device backup passes quotation integrity and rejects altered scripture (14.822375ms)
+✔ restore rejects unknown storage keys and executable source links (2.282125ms)
+✔ restore merges notes and preserves a different current draft (13.5965ms)
+✔ restore rolls back writes on a one-time storage failure (6.126792ms)
+✔ restore checks hadith attribution against actual indexed source (224.524541ms)
+✔ a repeated restore cannot overwrite an already recovered talk (2.115625ms)
+✔ multilingual aliases retain distinct speech concepts (4.699167ms)
+✔ Arabic normalization is derived only (0.116ms)
+✔ common transliterations resolve (1.523666ms)
+✔ unrelated substrings do not silently become topics (0.26275ms)
+✔ unrecognized input stays lexical, never executes instructions (0.397834ms)
+✔ no English-only tokenizer requirement for Bengali/Japanese (0.2765ms)
+✔ topic expansion retains negation, narrator and context qualifiers (0.328ms)
+✔ offline pack rejects altered Arabic and incomplete translations (137.439625ms)
+ℹ tests 26
+ℹ suites 0
+ℹ pass 26
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1352.747959
+
+$ npm run test:integrity
+
+> ayah-atlas@0.1.0 test:integrity
+> python3 tests/integrity.py
+
+test_basmalah_and_juz (__main__.CorpusIntegrity.test_basmalah_and_juz) ... ok
+test_benchmark_numbering_is_from_original_pages (__main__.CorpusIntegrity.test_benchmark_numbering_is_from_original_pages) ... ok
+test_database_constraints (__main__.CorpusIntegrity.test_database_constraints) ... ok
+test_exact_inventory (__main__.CorpusIntegrity.test_exact_inventory) ... ok
+test_no_scholarly_review_fabricated (__main__.CorpusIntegrity.test_no_scholarly_review_fabricated) ... ok
+test_raw_files_preserved (__main__.CorpusIntegrity.test_raw_files_preserved) ... ok
+test_reference_image_hashes (__main__.CorpusIntegrity.test_reference_image_hashes) ... ok
+test_shared_tafsir_is_not_fabricated_individual_entries (__main__.CorpusIntegrity.test_shared_tafsir_is_not_fabricated_individual_entries) ... ok
+test_source_characters_and_checksums (__main__.CorpusIntegrity.test_source_characters_and_checksums) ... ok
+test_tafsir_explicit_full_coverage (__main__.CorpusIntegrity.test_tafsir_explicit_full_coverage) ... ok
+test_translations_complete_independently (__main__.CorpusIntegrity.test_translations_complete_independently) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 2.464s
+
+OK
+
+$ python3 tests/import_security.py
+test_missing_provider_preserves_last_valid_corpus (__main__.ImportSafety.test_missing_provider_preserves_last_valid_corpus) ... ok
+test_rejects_internal_file_credential_and_unapproved_urls (__main__.ImportSafety.test_rejects_internal_file_credential_and_unapproved_urls) ... ok
+test_rejects_private_dns (__main__.ImportSafety.test_rejects_private_dns) ... ok
+test_rejects_redirect_before_following (__main__.ImportSafety.test_rejects_redirect_before_following) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.002s
+
+OK

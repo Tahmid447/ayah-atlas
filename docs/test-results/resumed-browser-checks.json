@@ -1,0 +1,53 @@
+{
+  "deviceRestore": {
+    "method": "Browser file chooser → checksum/source validation → confirmed restore → notebook → talk",
+    "notebookCountBefore": 2,
+    "notebookCountAfter": 2,
+    "talkTitle": "Guarding our speech — a source-led study",
+    "sourceIds": [
+      "q:49:12",
+      "hadeethenc@snapshot-2026-09-20-8c923cf8224a:5326:bn"
+    ],
+    "result": "pass"
+  },
+  "restoredTalkChecks": {
+    "en": "2 exact, 0 unresolved",
+    "bn": "2 exact, 0 unresolved",
+    "ja": "2 exact, 0 unresolved",
+    "artifact": "restored-talk-checks.json"
+  },
+  "typography": {
+    "fontScalePercent": [
+      150,
+      200
+    ],
+    "viewportWidths": [
+      390,
+      1440
+    ],
+    "noDocumentOrArabicHorizontalOverflow": true,
+    "imageNaturalWidth": 720,
+    "referenceImage": "/reference/p566.gif",
+    "visualInspection": "200% mobile DigitalKhatt diacritics and 150% dark desktop inspected; fonts remain alternatives to original raster",
+    "artifacts": [
+      "typography-200-mobile.png",
+      "typography-dark-desktop.png"
+    ]
+  },
+  "keyboard": {
+    "check": "Tab to native typography select",
+    "visibleFocus": "3px ring and contrasting border",
+    "fullAudit": false
+  },
+  "print": {
+    "actionAttempted": true,
+    "previewInspected": false,
+    "limitation": "Embedded browser did not expose a print preview; native Codex app inspection unavailable"
+  },
+  "physicalDeviceTesting": false,
+  "limitations": [
+    "No scholarly or professional linguistic review",
+    "No full WCAG audit",
+    "150/200% font controls are not full browser zoom testing"
+  ]
+}

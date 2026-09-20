@@ -303,7 +303,6 @@ export function understand(query: string) {
 }
 export function searchTerms(query: string) {
   const ts = understand(query);
-  if (ts.length) return [...new Set(ts.flatMap((t) => t.terms))];
   const stop = new Set(
     "i am a an the about find relevant quran hadith talk preparing please what does say and or of in is are to me for with this that".split(
       " ",
@@ -311,9 +310,10 @@ export function searchTerms(query: string) {
   );
   return [
     ...new Set(
-      normalize(query)
+      [...normalize(query)
         .split(/[\s,;?!。？！、]+/u)
         .filter((x) => x.length > 1 && !stop.has(x)),
+        ...ts.flatMap((t) => t.terms)],
     ),
-  ].slice(0, 16);
+  ].slice(0, 40);
 }

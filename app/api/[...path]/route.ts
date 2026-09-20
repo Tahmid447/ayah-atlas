@@ -165,15 +165,38 @@ export async function GET(req: Request) {
 export async function POST(req: Request) {
   try {
     if (!limit(req)) return response({ error: "Rate limit reached" }, 429);
-    if (Number(req.headers.get("content-length") || 0) > 80000)
+    if (
+      Number(req.headers.get("content-length") || 0) >
+      (parts(req)[0] === "export" ? 8388608 : 80000)
+    )
       return response({ error: "Request too large" }, 413);
     if (parts(req)[0] === "export") {
-      const form = await req.formData();
+      const chunks: Uint8Array[] = [];
+      let size = 0;
+      const reader = req.body?.getReader();
+      if (!reader) return response({ error: "Empty export" }, 400);
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        size += value.byteLength;
+        if (size > 8388608) {
+          await reader.cancel();
+          return response({ error: "Export too large" }, 413);
+        }
+        chunks.push(value);
+      }
+      const bytes = new Uint8Array(size);
+      let offset = 0;
+      for (const chunk of chunks) {
+        bytes.set(chunk, offset);
+        offset += chunk.byteLength;
+      }
+      const form = new URLSearchParams(new TextDecoder().decode(bytes));
       const name = z
         .string()
         .regex(/^ayah-atlas-[a-z-]+\.(?:md|json)$/)
         .parse(form.get("name"));
-      const content = z.string().min(1).max(70000).parse(form.get("content"));
+      const content = z.string().min(1).max(2000000).parse(form.get("content"));
       return new Response(content, {
         headers: {
           ...noStore,

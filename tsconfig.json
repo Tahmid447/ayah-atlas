@@ -43,6 +43,8 @@
   ],
   "exclude": [
     "node_modules",
-    "examples"
+    "examples",
+    "data/research-archive",
+    "dist"
   ]
 }

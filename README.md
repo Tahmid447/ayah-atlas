@@ -1,6 +1,6 @@
 # Ayah Atlas
 
-**Recovery checkpoint — 20 September 2026.** A working local Quran reader, published-source research workspace, evidence notebook, and cited talk studio. Progress is checkpointed for recovery across account changes. The user has resumed; implementation and verification continue from the preserved files.
+**Recovery checkpoint — 20 September 2026.** A working local Quran reader, published-source research workspace, evidence notebook, and cited talk studio. Progress is checkpointed for recovery across account changes. The resumed recovery fixes and validation are complete; remaining product limitations are recorded explicitly below and in the verification report.
 
 Start with **[RESUME_HERE.md](RESUME_HERE.md)**. It records current state, outstanding work, verification, and recovery steps. The complete original brief is [PROJECT_SPEC.md](PROJECT_SPEC.md). This is a new project, unrelated to VideoScope.
 
@@ -39,7 +39,7 @@ See [data/coverage.json](data/coverage.json), the Sources screen, and [docs/TYPO
 
 Published text is immutable. Search normalization is derived. There are no generated Quran translations or fabricated hadith grades. No scholar review is claimed. The software checks exact text and references; it does not certify semantic support or adjudicate interpretations.
 
-Notes and talks stay in the browser. Sources → **Export device backup** preserves them as JSON before switching accounts or devices. `docs/test-results/device-workspace.json` contains the checkpoint's example notebook and talk. Server caches contain public source content only. Editorial tokens are server-side and never saved in browser storage.
+Notes and talks stay in the browser. Sources → **Export device backup** preserves them as JSON before switching accounts or devices. **Restore device backup** verifies source content and merges notes while retaining an existing draft. `docs/test-results/device-workspace.json` contains the checkpoint's example notebook and talk. Server caches contain public source content only. Editorial tokens are server-side and never saved in browser storage.
 
 No production website was deployed. No paid service, billing change, or external AI call was made. The private GitHub repository/release is a recovery backup, not a published website.
 
@@ -55,3 +55,11 @@ npm run test:research
 ```
 
 API tests need the local server on port 4173, or `TEST_BASE_URL` pointing to a running instance. Import scripts and maintenance: [docs/MAINTENANCE.md](docs/MAINTENANCE.md). Actual test results and known gaps: [docs/VERIFICATION.md](docs/VERIFICATION.md).
+
+## Durable backup
+
+Private source repository: https://github.com/Tahmid447/ayah-atlas
+
+Latest full recovery archive, checksum, and verification: https://github.com/Tahmid447/ayah-atlas/releases/tag/checkpoint-2026-09-20-r2
+
+The archive includes source history, the validated database, original publisher downloads, reference images, research materials, and device-workspace backup. Another ChatGPT account still needs access to this GitHub repository or the downloaded archive. Resume with `RESUME_HERE.md`; do not recreate the project.

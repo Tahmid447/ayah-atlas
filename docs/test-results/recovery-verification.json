@@ -1,0 +1,9 @@
+{
+  "archive": "ayah-atlas-recovery-2026-09-20.tar.gz",
+  "sha256": "15a3ed5d92f3545c91b6796c11bfa2b8f66bfc6abd88755b571847e568b32e0a",
+  "allManifestFilesMatch": true,
+  "verifiedFiles": 3197,
+  "restoredSQLiteIntegrity": "ok",
+  "restoredAyat": 6236,
+  "remoteAssetDigestMatches": true
+}

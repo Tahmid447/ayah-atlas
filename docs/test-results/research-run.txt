@@ -1,0 +1,42 @@
+
+> ayah-atlas@0.1.0 test:research
+> python3 tests/research.py
+
+en gossip and backbiting {'49:12': 3, 'h:5326': 7} recall 1.0
+bn গীবত ও চোগলখুরি {'49:12': 3, 'h:5326': 7} recall 1.0
+ja 陰口と噂話 {'49:12': 3, 'h:5326': 7} recall 1.0
+en hypocrisy {'h:sunnah-bukhari-33': 9} recall 1.0
+bn মুনাফিক {'h:sunnah-bukhari-33': 20} recall 1.0
+ja 偽善 {'h:sunnah-bukhari-33': 20} recall 1.0
+en truthfulness {} recall 0.0
+bn সত্যবাদিতা {'9:119': 4} recall 1.0
+ja 正直 {} recall 0.0
+en charity {} recall 0.0
+bn দান {} recall 0.0
+ja 施し {} recall 0.0
+en justice {'4:135': 25} recall 1.0
+bn ন্যায়বিচার {'4:135': 30} recall 1.0
+ja 公正 {'4:135': 25} recall 1.0
+en parents {'17:23': 12} recall 1.0
+bn পিতা-মাতা {'17:23': 3} recall 1.0
+ja 両親 {'17:23': 12} recall 1.0
+en patience {'2:153': 2} recall 1.0
+bn ধৈর্য {'2:153': 2} recall 1.0
+ja 忍耐 {'2:153': 2} recall 1.0
+en gratitude {'14:7': 39} recall 1.0
+bn কৃতজ্ঞতা {'14:7': 26} recall 1.0
+ja 感謝 {'14:7': 32} recall 1.0
+en repentance {'39:53': 33} recall 1.0
+bn তাওবা {'39:53': 24} recall 1.0
+ja 悔い改め {'39:53': 24} recall 1.0
+en Moses {'20:9': 26} recall 1.0
+bn মূসা {'20:9': 26} recall 1.0
+ja ムーサー {'20:9': 26} recall 1.0
+{
+  "transientFailures": [],
+  "queries": 30,
+  "meanRecallAt54": 0.8333333333333334,
+  "allReferencesResolve": true,
+  "semanticSupport": "Not evaluated by a human; reference resolution is not proof of interpretive support.",
+  "method": "30 queries, 10 source-verified benchmark themes, three languages; expected refs are evaluation seeds only; exact source search uses full corpus FTS and topic aliases."
+}

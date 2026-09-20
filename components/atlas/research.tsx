@@ -38,6 +38,7 @@ export function ResearchView({
   const [kind, setKind] = useState("all");
   const [language, setLanguage] = useState("all");
   const [page, setPage] = useState(1);
+  const [attempt, setAttempt] = useState(0);
   useEffect(() => {
     if (!query) return;
     let live = true;
@@ -65,7 +66,7 @@ export function ResearchView({
     return () => {
       live = false;
     };
-  }, [query, kind, language, page]);
+  }, [query, kind, language, page, attempt]);
   const loading = finished !== query + "|" + kind + "|" + language + "|" + page;
   const matched = topics.filter((x) => data?.topics.includes(x.id));
   return (
@@ -223,7 +224,13 @@ export function ResearchView({
           {loading ? (
             <Load label={t.loading} />
           ) : error ? (
-            <Load error={error} retry={() => setPage((p) => p)} />
+            <Load
+              error={error}
+              retry={() => {
+                setFinished("");
+                setAttempt((n) => n + 1);
+              }}
+            />
           ) : (
             data && (
               <>

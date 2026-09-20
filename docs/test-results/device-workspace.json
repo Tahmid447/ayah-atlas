@@ -1,7 +1,7 @@
 {
   "format": "ayah-atlas-device-backup",
   "version": 1,
-  "created": "2026-09-20T13:37:12.132Z",
+  "created": "2026-09-20T14:03:20.140Z",
   "entries": {
     "atlas.lineSpacing": 2.25,
     "atlas.language": "ja",
@@ -430,6 +430,7 @@
     ],
     "atlas.bookmarks": [],
     "atlas.readMode": "page",
+    "atlas.recoveredTalk": null,
     "atlas.editions": {
       "en": "english_rwwad",
       "bn": "bengali_zakaria",
@@ -447,7 +448,7 @@
         "a9c36809-faa3-43b4-bfe0-532d7a33ac53",
         "1f6ee8cf-187e-4c76-9054-c9f805b2da3f"
       ],
-      "updated": "2026-09-20T13:04:02.831Z"
+      "updated": "2026-09-20T13:58:41.313Z"
     },
     "atlas.offlinePack": ""
   }

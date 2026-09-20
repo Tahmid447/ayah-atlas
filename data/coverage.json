@@ -1,0 +1,80 @@
+{
+  "retrieved": "2026-09-20T12:14:59.933804+00:00",
+  "ayat": 6236,
+  "surahs": 114,
+  "editions": [
+    {
+      "source": "tanzil",
+      "version": "1.1",
+      "count": 6236,
+      "sha256": "c5052534d63d3856ce25413ff464d0b609f90169a202a1615aa8707efec81244"
+    },
+    {
+      "source": "english_rwwad",
+      "version": "1.0.19",
+      "count": 6236,
+      "sha256": "77e2ede3d8e6d6b5c6e16ff78eda2d2b6cc0a6b7489c94a5dde4f7481f5fdee8"
+    },
+    {
+      "source": "english_saheeh",
+      "version": "1.1.2",
+      "count": 6236,
+      "sha256": "8e3feedb9b6735d60355c53aef9ebc4b86a8b995d118c0387e7e1bd93b67eddb"
+    },
+    {
+      "source": "bengali_zakaria",
+      "version": "1.1.1",
+      "count": 6236,
+      "sha256": "5204bb389e081f8b3030010635579387407c168eff931eaab2367a848aedb7e4"
+    },
+    {
+      "source": "bengali_rwwad",
+      "version": "1.1.2",
+      "count": 6236,
+      "sha256": "34610bba38baa7aa5e711609c93c16f58fef0214447cb3774e833b4906365851"
+    },
+    {
+      "source": "japanese_saeedsato",
+      "version": "1.0.13",
+      "count": 6236,
+      "sha256": "9b3f315e0c6b87a2f406ff27aa7feafaa7ff972ee58cb0b1b391868b72b49195"
+    },
+    {
+      "source": "bengali_mokhtasar",
+      "version": "1.0.0",
+      "count": 6236,
+      "sha256": "e83997f5b7d4628d3d159fc8f4484238f33c502659270034322bd7d264ff4672"
+    },
+    {
+      "source": "japanese_mokhtasar",
+      "version": "1.0.0",
+      "count": 6236,
+      "sha256": "e867148b24fe74dc8e3bd2256a92b9f3162ba2c78992c69209553faa06179ae0"
+    },
+    {
+      "source": "arabic_mokhtasar",
+      "version": "1.0.0",
+      "count": 6236,
+      "sha256": "05086b0661250dca6c6cedd6c4503f169d14dc5fef81ae5042418c07817495e0"
+    },
+    {
+      "source": "ibn-kathir-en",
+      "version": "snapshot-2026-09-20",
+      "count": 6236,
+      "sha256": "0a564fd14cab8d456ae6990cfda1c491ebb60ed52f5eaeef8a7de1e169d5a6e3"
+    },
+    {
+      "source": "hadeethenc",
+      "version": "snapshot-2026-09-20",
+      "count": 41,
+      "sha256": "8c923cf8224afb6cfdcce2d528fae97c5d36e071da8d8f75487124ac4dc16c35"
+    },
+    {
+      "source": "sunnah-bukhari-33",
+      "version": "snapshot-2026-09-20",
+      "count": 1,
+      "sha256": "c799839f9aadacd0affd44a144f1ab29f17f8d746b4ef9c724e11963b76d61e8"
+    }
+  ],
+  "humanReviewed": 0
+}

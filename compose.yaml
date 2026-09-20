@@ -1,0 +1,9 @@
+services:
+  ayah-atlas:
+    build: .
+    ports:
+      - "127.0.0.1:4173:4173"
+    volumes:
+      - atlas-state:/app/.wrangler/state
+volumes:
+  atlas-state:

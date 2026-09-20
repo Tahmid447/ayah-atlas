@@ -1,0 +1,565 @@
+{
+  "transientFailures": [],
+  "queries": 30,
+  "meanRecallAt54": 0.8,
+  "allReferencesResolve": true,
+  "semanticSupport": "Not evaluated by a human; reference resolution is not proof of interpretive support.",
+  "method": "30 queries, 10 source-verified benchmark themes, three languages; expected refs are evaluation seeds only; exact source search uses full corpus FTS and topic aliases.",
+  "results": [
+    {
+      "topic": "backbiting",
+      "language": "en",
+      "query": "gossip and backbiting",
+      "expected": [
+        "49:12",
+        "h:5326"
+      ],
+      "found": [
+        "49:12",
+        "h:5326"
+      ],
+      "recallAt54": 1.0,
+      "positions": {
+        "49:12": 3,
+        "h:5326": 7
+      },
+      "referencesResolved": true,
+      "returned": 54,
+      "totalResults": 59,
+      "seconds": 0.47
+    },
+    {
+      "topic": "backbiting",
+      "language": "bn",
+      "query": "গীবত ও চোগলখুরি",
+      "expected": [
+        "49:12",
+        "h:5326"
+      ],
+      "found": [
+        "49:12",
+        "h:5326"
+      ],
+      "recallAt54": 1.0,
+      "positions": {
+        "49:12": 3,
+        "h:5326": 7
+      },
+      "referencesResolved": true,
+      "returned": 54,
+      "totalResults": 59,
+      "seconds": 0.18
+    },
+    {
+      "topic": "backbiting",
+      "language": "ja",
+      "query": "陰口と噂話",
+      "expected": [
+        "49:12",
+        "h:5326"
+      ],
+      "found": [
+        "49:12",
+        "h:5326"
+      ],
+      "recallAt54": 1.0,
+      "positions": {
+        "49:12": 3,
+        "h:5326": 7
+      },
+      "referencesResolved": true,
+      "returned": 54,
+      "totalResults": 59,
+      "seconds": 0.19
+    },
+    {
+      "topic": "hypocrisy",
+      "language": "en",
+      "query": "hypocrisy",
+      "expected": [
+        "h:sunnah-bukhari-33"
+      ],
+      "found": [
+        "h:sunnah-bukhari-33"
+      ],
+      "recallAt54": 1.0,
+      "positions": {
+        "h:sunnah-bukhari-33": 20
+      },
+      "referencesResolved": true,
+      "returned": 54,
+      "totalResults": 550,
+      "seconds": 0.77
+    },
+    {
+      "topic": "hypocrisy",
+      "language": "bn",
+      "query": "মুনাফিক",
+      "expected": [
+        "h:sunnah-bukhari-33"
+      ],
+      "found": [
+        "h:sunnah-bukhari-33"
+      ],
+      "recallAt54": 1.0,
+      "positions": {
+        "h:sunnah-bukhari-33": 20
+      },
+      "referencesResolved": true,
+      "returned": 54,
+      "totalResults": 550,
+      "seconds": 0.65
+    },
+    {
+      "topic": "hypocrisy",
+      "language": "ja",
+      "query": "偽善",
+      "expected": [
+        "h:sunnah-bukhari-33"
+      ],
+      "found": [
+        "h:sunnah-bukhari-33"
+      ],
+      "recallAt54": 1.0,
+      "positions": {
+        "h:sunnah-bukhari-33": 20
+      },
+      "referencesResolved": true,
+      "returned": 54,
+      "totalResults": 550,
+      "seconds": 0.64
+    },
+    {
+      "topic": "honesty",
+      "language": "en",
+      "query": "truthfulness",
+      "expected": [
+        "9:119"
+      ],
+      "found": [],
+      "recallAt54": 0.0,
+      "positions": {},
+      "referencesResolved": true,
+      "returned": 54,
+      "totalResults": 575,
+      "seconds": 0.7
+    },
+    {
+      "topic": "honesty",
+      "language": "bn",
+      "query": "সত্যবাদিতা",
+      "expected": [
+        "9:119"
+      ],
+      "found": [],
+      "recallAt54": 0.0,
+      "positions": {},
+      "referencesResolved": true,
+      "returned": 54,
+      "totalResults": 575,
+      "seconds": 0.56
+    },
+    {
+      "topic": "honesty",
+      "language": "ja",
+      "query": "正直",
+      "expected": [
+        "9:119"
+      ],
+      "found": [],
+      "recallAt54": 0.0,
+      "positions": {},
+      "referencesResolved": true,
+      "returned": 54,
+      "totalResults": 575,
+      "seconds": 0.73
+    },
+    {
+      "topic": "charity",
+      "language": "en",
+      "query": "charity",
+      "expected": [
+        "2:261"
+      ],
+      "found": [],
+      "recallAt54": 0.0,
+      "positions": {},
+      "referencesResolved": true,
+      "returned": 54,
+      "totalResults": 4105,
+      "seconds": 2.06
+    },
+    {
+      "topic": "charity",
+      "language": "bn",
+      "query": "দান",
+      "expected": [
+        "2:261"
+      ],
+      "found": [],
+      "recallAt54": 0.0,
+      "positions": {},
+      "referencesResolved": true,
+      "returned": 54,
+      "totalResults": 4105,
+      "seconds": 1.98
+    },
+    {
+      "topic": "charity",
+      "language": "ja",
+      "query": "施し",
+      "expected": [
+        "2:261"
+      ],
+      "found": [],
+      "recallAt54": 0.0,
+      "positions": {},
+      "referencesResolved": true,
+      "returned": 54,
+      "totalResults": 4105,
+      "seconds": 1.71
+    },
+    {
+      "topic": "justice",
+      "language": "en",
+      "query": "justice",
+      "expected": [
+        "4:135"
+      ],
+      "found": [
+        "4:135"
+      ],
+      "recallAt54": 1.0,
+      "positions": {
+        "4:135": 25
+      },
+      "referencesResolved": true,
+      "returned": 54,
+      "totalResults": 923,
+      "seconds": 1.07
+    },
+    {
+      "topic": "justice",
+      "language": "bn",
+      "query": "ন্যায়বিচার",
+      "expected": [
+        "4:135"
+      ],
+      "found": [
+        "4:135"
+      ],
+      "recallAt54": 1.0,
+      "positions": {
+        "4:135": 25
+      },
+      "referencesResolved": true,
+      "returned": 54,
+      "totalResults": 923,
+      "seconds": 0.93
+    },
+    {
+      "topic": "justice",
+      "language": "ja",
+      "query": "公正",
+      "expected": [
+        "4:135"
+      ],
+      "found": [
+        "4:135"
+      ],
+      "recallAt54": 1.0,
+      "positions": {
+        "4:135": 25
+      },
+      "referencesResolved": true,
+      "returned": 54,
+      "totalResults": 923,
+      "seconds": 0.99
+    },
+    {
+      "topic": "parents",
+      "language": "en",
+      "query": "parents",
+      "expected": [
+        "17:23"
+      ],
+      "found": [
+        "17:23"
+      ],
+      "recallAt54": 1.0,
+      "positions": {
+        "17:23": 12
+      },
+      "referencesResolved": true,
+      "returned": 54,
+      "totalResults": 4090,
+      "seconds": 2.57
+    },
+    {
+      "topic": "parents",
+      "language": "bn",
+      "query": "পিতা-মাতা",
+      "expected": [
+        "17:23"
+      ],
+      "found": [
+        "17:23"
+      ],
+      "recallAt54": 1.0,
+      "positions": {
+        "17:23": 12
+      },
+      "referencesResolved": true,
+      "returned": 54,
+      "totalResults": 4090,
+      "seconds": 2.27
+    },
+    {
+      "topic": "parents",
+      "language": "ja",
+      "query": "両親",
+      "expected": [
+        "17:23"
+      ],
+      "found": [
+        "17:23"
+      ],
+      "recallAt54": 1.0,
+      "positions": {
+        "17:23": 12
+      },
+      "referencesResolved": true,
+      "returned": 54,
+      "totalResults": 4090,
+      "seconds": 2.31
+    },
+    {
+      "topic": "patience",
+      "language": "en",
+      "query": "patience",
+      "expected": [
+        "2:153"
+      ],
+      "found": [
+        "2:153"
+      ],
+      "recallAt54": 1.0,
+      "positions": {
+        "2:153": 2
+      },
+      "referencesResolved": true,
+      "returned": 54,
+      "totalResults": 650,
+      "seconds": 0.95
+    },
+    {
+      "topic": "patience",
+      "language": "bn",
+      "query": "ধৈর্য",
+      "expected": [
+        "2:153"
+      ],
+      "found": [
+        "2:153"
+      ],
+      "recallAt54": 1.0,
+      "positions": {
+        "2:153": 2
+      },
+      "referencesResolved": true,
+      "returned": 54,
+      "totalResults": 650,
+      "seconds": 1.0
+    },
+    {
+      "topic": "patience",
+      "language": "ja",
+      "query": "忍耐",
+      "expected": [
+        "2:153"
+      ],
+      "found": [
+        "2:153"
+      ],
+      "recallAt54": 1.0,
+      "positions": {
+        "2:153": 2
+      },
+      "referencesResolved": true,
+      "returned": 54,
+      "totalResults": 650,
+      "seconds": 0.68
+    },
+    {
+      "topic": "gratitude",
+      "language": "en",
+      "query": "gratitude",
+      "expected": [
+        "14:7"
+      ],
+      "found": [
+        "14:7"
+      ],
+      "recallAt54": 1.0,
+      "positions": {
+        "14:7": 32
+      },
+      "referencesResolved": true,
+      "returned": 54,
+      "totalResults": 454,
+      "seconds": 0.4
+    },
+    {
+      "topic": "gratitude",
+      "language": "bn",
+      "query": "কৃতজ্ঞতা",
+      "expected": [
+        "14:7"
+      ],
+      "found": [
+        "14:7"
+      ],
+      "recallAt54": 1.0,
+      "positions": {
+        "14:7": 32
+      },
+      "referencesResolved": true,
+      "returned": 54,
+      "totalResults": 454,
+      "seconds": 0.34
+    },
+    {
+      "topic": "gratitude",
+      "language": "ja",
+      "query": "感謝",
+      "expected": [
+        "14:7"
+      ],
+      "found": [
+        "14:7"
+      ],
+      "recallAt54": 1.0,
+      "positions": {
+        "14:7": 32
+      },
+      "referencesResolved": true,
+      "returned": 54,
+      "totalResults": 454,
+      "seconds": 0.34
+    },
+    {
+      "topic": "repentance",
+      "language": "en",
+      "query": "repentance",
+      "expected": [
+        "39:53"
+      ],
+      "found": [
+        "39:53"
+      ],
+      "recallAt54": 1.0,
+      "positions": {
+        "39:53": 24
+      },
+      "referencesResolved": true,
+      "returned": 54,
+      "totalResults": 1028,
+      "seconds": 0.91
+    },
+    {
+      "topic": "repentance",
+      "language": "bn",
+      "query": "তাওবা",
+      "expected": [
+        "39:53"
+      ],
+      "found": [
+        "39:53"
+      ],
+      "recallAt54": 1.0,
+      "positions": {
+        "39:53": 24
+      },
+      "referencesResolved": true,
+      "returned": 54,
+      "totalResults": 1028,
+      "seconds": 0.83
+    },
+    {
+      "topic": "repentance",
+      "language": "ja",
+      "query": "悔い改め",
+      "expected": [
+        "39:53"
+      ],
+      "found": [
+        "39:53"
+      ],
+      "recallAt54": 1.0,
+      "positions": {
+        "39:53": 24
+      },
+      "referencesResolved": true,
+      "returned": 54,
+      "totalResults": 1028,
+      "seconds": 0.81
+    },
+    {
+      "topic": "moses",
+      "language": "en",
+      "query": "Moses",
+      "expected": [
+        "20:9"
+      ],
+      "found": [
+        "20:9"
+      ],
+      "recallAt54": 1.0,
+      "positions": {
+        "20:9": 26
+      },
+      "referencesResolved": true,
+      "returned": 54,
+      "totalResults": 2827,
+      "seconds": 1.76
+    },
+    {
+      "topic": "moses",
+      "language": "bn",
+      "query": "মূসা",
+      "expected": [
+        "20:9"
+      ],
+      "found": [
+        "20:9"
+      ],
+      "recallAt54": 1.0,
+      "positions": {
+        "20:9": 26
+      },
+      "referencesResolved": true,
+      "returned": 54,
+      "totalResults": 2827,
+      "seconds": 1.75
+    },
+    {
+      "topic": "moses",
+      "language": "ja",
+      "query": "ムーサー",
+      "expected": [
+        "20:9"
+      ],
+      "found": [
+        "20:9"
+      ],
+      "recallAt54": 1.0,
+      "positions": {
+        "20:9": 26
+      },
+      "referencesResolved": true,
+      "returned": 54,
+      "totalResults": 2827,
+      "seconds": 2.26
+    }
+  ]
+}

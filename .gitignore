@@ -59,3 +59,6 @@ next-env.d.ts
 __pycache__/
 *.pyc
 /data/recovery-manifest.json
+
+/vendor/famous-quran/public/
+/public/famous/

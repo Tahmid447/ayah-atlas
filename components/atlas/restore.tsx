@@ -47,7 +47,7 @@ export function RestoreWorkspace() {
   }
   function restore() {
     try {
-      const result = mergeWorkspaceBackup(pending!, localStorage);
+      const result = mergeWorkspaceBackup(pending!, window.AtlasStore);
       setPending(null);
       // Reload after restoring storage so every device preference rehydrates together.
       history.replaceState(null, "", "/?view=notebook" + (result.recoveredTalk ? "&recoveredTalk=1" : ""));

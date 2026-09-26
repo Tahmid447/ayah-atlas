@@ -221,11 +221,12 @@ export function SourcesView({
                 variant="outline"
                 onClick={() => {
                   const entries: Record<string, unknown> = {};
-                  for (const key of Object.keys(localStorage)) {
+                  for (let i = 0; i < window.AtlasStore.length; i++) {
+                    const key = window.AtlasStore.key(i) || "";
                     if (key.startsWith("atlas.")) {
                       try {
                         entries[key] = JSON.parse(
-                          localStorage.getItem(key) || "null",
+                          window.AtlasStore.getItem(key) || "null",
                         );
                       } catch {}
                     }

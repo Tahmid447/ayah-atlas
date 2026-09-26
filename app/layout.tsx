@@ -1,5 +1,7 @@
+import Script from "next/script";
 import type { Metadata } from "next";
 import "./globals.css";
+import "@/public/shared/workspace.css";
 import { brand } from "@/lib/brand";
 
 export const metadata: Metadata = {
@@ -22,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased">{children}</body>
+      <body className="antialiased"><Script src="/shared/supabase.js" strategy="beforeInteractive" /><Script src="/shared/workspace.js" strategy="beforeInteractive" /><Script src="/shared/annotations.js" strategy="beforeInteractive" />{children}</body>
     </html>
   );
 }

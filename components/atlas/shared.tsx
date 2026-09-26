@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 import { ExternalLink, LoaderCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import type { Language } from "@/lib/topics";
@@ -94,23 +94,22 @@ export async function api<T>(url: string, body?: unknown): Promise<T> {
 /* eslint-disable react-hooks/set-state-in-effect */
 export function useLocal<T>(key: string, initial: T) {
   const [value, setValue] = useState(initial);
-  const [ready, setReady] = useState(false);
+  const ref = useRef(value);
+  const initialRef = useRef(initial);
+  const [ready,setReady] = useState(false);
   useEffect(() => {
-    try {
-      const raw = localStorage.getItem(key);
-      if (raw) setValue(JSON.parse(raw));
-    } catch {}
-    setReady(true);
-  }, [key]);
-  useEffect(() => {
-    if (ready)
-      try {
-        localStorage.setItem(key, JSON.stringify(value));
-      } catch {
-        window.dispatchEvent(new CustomEvent("atlas-storage-error"));
-      }
-  }, [key, value, ready]);
-  return [value, setValue, ready] as const;
+    const read = () => { try { const raw=window.AtlasStore.getItem(key); const next=raw===null?initialRef.current:JSON.parse(raw); ref.current=next; setValue(next); } catch {} };
+    const changed = (event: Event) => { if ((event as CustomEvent).detail?.key===key) read(); };
+    read(); setReady(true); window.addEventListener('atlas-workspace-change',changed);
+    return()=>window.removeEventListener('atlas-workspace-change',changed);
+  },[key]);
+  const update = useCallback((next: T | ((current:T)=>T)) => {
+    const v = typeof next === 'function' ? (next as (current:T)=>T)(ref.current) : next;
+    ref.current=v;setValue(v);
+    try { window.AtlasStore.setItem(key,JSON.stringify(v)); }
+    catch { window.dispatchEvent(new CustomEvent('atlas-storage-error')); }
+  },[key]);
+  return [value,update,ready] as const;
 }
 export function evidenceLabel(e: Evidence) {
   return e.kind === "quran"
@@ -142,7 +141,7 @@ export function translationFor(e: Evidence, lang: Language) {
 export function withReadingPreferences(e: Evidence): Evidence {
   try {
     const preferred = JSON.parse(
-      localStorage.getItem("atlas.editions") || "{}",
+      window.AtlasStore.getItem("atlas.editions") || "{}",
     );
     return { ...e, preferredTranslations: preferred };
   } catch {

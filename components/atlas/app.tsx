@@ -73,6 +73,9 @@ const defaultTalk: Talk = {
   updated: "",
 };
 export default function Atlas() {
+  const [ready,setReady]=useState(false);
+  useEffect(()=>{if (/^#p[0-9]+$/.test(location.hash)) { location.replace("/famous/index.html"+location.hash); return; } void window.AtlasWorkspace.ready.then(()=>setReady(true));},[]);
+  if(!ready) return <p role="status" className="load-state">Opening your Quran workspace…</p>;
   return (
     <SidebarProvider
       style={{ "--sidebar-width": "232px" } as React.CSSProperties}
@@ -261,6 +264,7 @@ function Workspace() {
               ))}
             </SidebarMenu>
           </SidebarGroup>
+          <a className="atlas-famous-link" href="/famous/index.html"><Mic2 size={18}/> Famous Quran · Recitations</a>
           <SidebarGroup className="bookmarks-group">
             <p className="sidebar-label">
               {t.bookmarks}
@@ -303,7 +307,7 @@ function Workspace() {
                   ? "個人のワークスペース"
                   : "Personal workspace"}
             </strong>
-            <span>{t.privacy}</span>
+            <span>{window.AtlasWorkspace.owner === "guest" ? "Guest · saved on device" : "Signed in · private sync"}</span>
           </div>
         </SidebarFooter>
       </Sidebar>
@@ -322,6 +326,7 @@ function Workspace() {
             </strong>
           </div>
           <div className="topbar-tools">
+            <button className="atlas-account-link" onClick={()=>window.AtlasWorkspace.open()}>Account & sync</button>
             <Globe size={16} />
             <NativeSelect
               aria-label={t.language}

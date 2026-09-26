@@ -1,0 +1,28 @@
+import fs from 'node:fs';
+import vm from 'node:vm';
+import {createHash} from 'node:crypto';
+function patch(file,from,to){let s=fs.readFileSync('public/'+file,'utf8');if(!s.includes(from))throw Error('Patch precondition failed: '+file+' '+from.slice(0,60));fs.writeFileSync('public/'+file,s.replaceAll(from,to));}
+for(const f of ['community-data.js','community-recordings.js','community.js','community.css'])fs.copyFileSync(f,'public/'+f);
+patch('app-v2.js','if(!p)return;Q.stop();Q.active=p;','if(!p)return;Q.active=p;');
+patch('app-v2.js','player.ontimeupdate=()=>Q.updatePlayback?.();','player.ontimeupdate=null;');
+patch('app-v2.js',"if(Q.currentPlayback?.kind!=='ayah')return;","if(Q.currentPlayback?.kind!=='ayah'||Q.currentPlayback?.rank!==Q.reading?.rank)return;");
+patch('experience-v3.js','Math.min(30,Q.active.rank+1)','Math.min(window.PASSAGES.length,Q.active.rank+1)');
+patch('experience-v3.js','+rank>=30','+rank>=window.PASSAGES.length');
+patch('experience-v3.js','document.body.append(mini);mini.appendChild(player);',"document.body.append(mini);document.body.appendChild(player);player.classList.add('native-audio-engine');");
+patch('experience-v3.js','if(a!==player)a.pause();',"if(a!==player&&!a.hasAttribute('data-persistent-native'))a.pause();");
+patch('experience-v3.js','function refreshVideoControls(){if(videoFloat.hidden||!floatYt)return;','function refreshVideoControls(){if(document.hidden||videoFloat.hidden||!floatYt)return;');
+patch('experience-v3.js','if(e.button!==0)return;begin(e.clientX',"if(e.button!==0||e.target.closest('button,input,a,select'))return;begin(e.clientX");
+patch('experience-v3.js','const p=e.touches[0];if(!p)return;begin',"const p=e.touches[0];if(!p||e.target.closest('button,input,a,select'))return;begin");
+patch('experience-v3.js',"if(navigator.onLine!==false){el.src=url;","if(navigator.onLine!==false&&!url.startsWith('local:')){el.src=url;");
+patch('experience-v3.js','<audio controls preload="metadata" playsinline','<audio controls preload="none" playsinline');
+patch('experience-v3.js','let clips=p.surahNo===25?[...clips25]:[];', 'let clips=p.surahNo===25?[...clips25]:(window.FQ_EXTRA_CLIPS?.[p.surahNo]||[]).slice();');
+patch('account.js','n<=30','n<=window.PASSAGES.length');
+patch('index.html','</head>','<link rel="stylesheet" href="/community.css"></head>');
+patch('index.html','</body>','<script src="/community-data.js"></script><script src="/community-recordings.js"></script><script src="/community.js"></script></body>');
+let worker=fs.readFileSync('public/sw.js','utf8');worker=worker.replace('const ASSETS=[',"const ASSETS=['/community.css','/community-data.js','/community-recordings.js','/community.js',");
+const hash=createHash('sha256');for(const name of fs.readdirSync('public').sort())if(!['sw.js','release.json'].includes(name))hash.update(name).update(fs.readFileSync('public/'+name));const revision=hash.digest('hex').slice(0,16);
+worker=worker.replace(/fq-shell-[a-f0-9]{16}/g,'fq-shell-'+revision);fs.writeFileSync('public/sw.js',worker);
+for(const name of fs.readdirSync('public').filter(x=>x.endsWith('.js')))new vm.Script(fs.readFileSync('public/'+name,'utf8'),{filename:name});
+const {verify}=await import('./verify.mjs');const checks=await verify();checks.push('Source-based guides and complete-surah modules included','Existing passage IDs and notes retained','Native player stays mounted; user media is not publicly uploaded');
+fs.writeFileSync('public/release.json',JSON.stringify({version:'3.1.0',revision,commit:process.env.VERCEL_GIT_COMMIT_SHA||'local',builtAt:new Date().toISOString(),checks,pending:['User-supplied exact video file for public native playback','Physical-iPhone screen-lock and system-PiP verification']},null,2));
+console.log('Community build:',checks.length,'checks passed');

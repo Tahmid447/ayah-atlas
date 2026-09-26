@@ -1,4 +1,6 @@
-import { env } from "cloudflare:workers";
+export const runtime = "nodejs";
+export const maxDuration = 60;
+const env = process.env;
 import {
   chapter,
   evidence,
@@ -20,7 +22,7 @@ function parts(req: Request) {
     .map(decodeURIComponent);
 }
 function limit(req: Request) {
-  const k = req.headers.get("cf-connecting-ip") || "local";
+  const k = req.headers.get("x-forwarded-for")?.split(",")[0] || "local";
   const now = Date.now();
   const prev = rates.get(k);
   if (!prev || prev.until < now) {

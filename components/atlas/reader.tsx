@@ -1,6 +1,6 @@
 "use client";
 /* Original GIFs intentionally bypass image transforms to preserve the supplied source. */
-/* eslint-disable @next/next/no-img-element */
+import { AnnotatedPage } from "./annotations";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import {
@@ -357,7 +357,7 @@ export function Reader({
                       "manuscript " + (pageZoom ? "manuscript-zoom" : "")
                     }
                   >
-                    <img
+                    <AnnotatedPage
                       src={currentImage}
                       alt={`${data.surah.name}: original printed Quran page. ${section?.section || "68:7–31"}. Select an ayah in the toolbar for accessible Unicode and translations.`}
                     />

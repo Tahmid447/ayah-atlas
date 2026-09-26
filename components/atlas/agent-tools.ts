@@ -63,7 +63,7 @@ export function useAgentTools(actions: Actions) {
         name: "save_evidence_to_notebook",
         title: "Save published evidence",
         description:
-          "Save up to ten resolved evidence snapshots to this device’s notebook, preserving source editions. Does not publish or transmit notes.",
+          "Save up to ten resolved evidence snapshots to the current personal notebook, preserving source editions. Uses the signed-in private workspace when available.",
         inputSchema: {
           type: "object",
           properties: {

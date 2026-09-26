@@ -2,6 +2,8 @@
 
 The user now explicitly authorized free live deployment, merging Famous Quran, page annotations, and private account sync. This supersedes older deployment restrictions below. Current code uses Next.js on Node 24 for Vercel; immutable source corpus is compressed in Git and verified/decompressed at build. Famous Quran is preserved under vendor/famous-quran and integrated at /famous/index.html. Supabase project qzamdjcguksgzqcdaosd in Black Choco is approved for Quran data. See docs/MERGE_DEPLOYMENT.md for current activation and verification status.
 
+**LIVE:** https://famous-quran.vercel.app/ (production code a109a6b; Vercel deployment 9iBvwvChxYgdN9cWYxcvRVeeqSZz, Ready). Public corpus, media API, both reader areas, annotation tools and PDF assets verified. Work and data are backed up in private GitHub. Remaining activation: Google policy confirmation, OAuth web client and Supabase provider, then a real sign-in/sync check. Public Google sign-in is deliberately not enabled yet. Supabase Site URL is now the production domain. Browser email delivery is restricted to project members until Google or custom SMTP is activated. Physical Pencil/printer testing remains a user-device check.
+
 # Historical recovery checkpoint — September 20
 
 The sections below describe the earlier local-only release. Its Vinext commands, deployment restrictions and device-only account status are historical. Use the current README and docs/MERGE_DEPLOYMENT.md for the Next.js merged deployment.

@@ -12,7 +12,7 @@ User-authorized: merge Ayah Atlas and Famous Quran, deploy free, add Pencil/touc
 ## Activation status
 - Private atlas_items table and atlas_save_item RPC applied in the dashboard. Anonymous table read was rejected (401 / permission denied).
 - Google provider and custom SMTP were initially absent. Google setup is in progress; default Supabase email is restricted to project members. Do not claim general-public login is ready until an actual provider is activated and checked.
-- Deployment is in progress. Record the verified production URL and commit here when complete.
+- Live production: https://famous-quran.vercel.app/ and https://famous-quran.vercel.app/famous/index.html. Code commit a109a6b, Vercel deployment 9iBvwvChxYgdN9cWYxcvRVeeqSZz reached Ready on 2026-09-26 at 23:39 JST. Existing domain retained, no paid upgrade.
 
 ## Essential checks
 - Next production build passed; full corpus health returned 6236 ayat.
@@ -30,7 +30,15 @@ User-authorized: merge Ayah Atlas and Famous Quran, deploy free, add Pencil/touc
 - Poor uplink caused one 50.66 MiB Git upload to time out (HTTP 408). Preserve recovery/unified-before-split-upload locally; unpublished commits were repackaged as code plus 4 MiB corpus parts for incremental uploads. The reconstructed raw database must match data/corpus-deployment.json before build. No source data was changed.
 
 ## Final activation checkpoint
-- All 13 corpus parts and merged source are uploaded to private GitHub; f184a9c is the complete corpus checkpoint. Vercel's existing famous-quran project is now connected to Tahmid447/ayah-atlas, with Next.js and Node 24 selected. Production deployment is the next step.
+- All 13 corpus parts and merged source are uploaded to private GitHub; f184a9c is the complete corpus checkpoint. Vercel's existing famous-quran project is connected to Tahmid447/ayah-atlas, with Next.js and Node 24 selected. Subsequent pushes to main deploy automatically.
 - Google Cloud project Quran Workspace (hardy-beach-509814-r2), Black Choco account, is at the API Services User Data Policy agreement. User confirmation is pending; no agreement accepted and no OAuth client created yet. After approval, finish branding, create the web OAuth client for the Supabase callback, configure the provider, production redirect URL and public audience, then enable PUBLIC_GOOGLE_SIGN_IN and verify a real sign-in. Never commit client secrets.
 - Print uses a same-origin nonce-bound popup and a lossless composite of original image + marks. Browser printing can include page notes separately. A direct A4 PDF download uses vendored jsPDF 4.2.1 with its license. The shared PDF generator was exercised and its one-page A4 output rendered: the complete original page and border fit without clipping. Browser preview confirmed the composite image loaded. Physical printer/Pencil checks remain unperformed.
 - Existing root service worker migration preserves private storage and offline packs. No old Famous repository history was rewritten.
+
+## Production verification
+- Final build, typecheck, lint and new print-script syntax checks passed. The earlier 26 core tests and 5 focused workspace tests passed; unchanged broad corpus/research benchmarks were not repeated.
+- Live health: 6,236 ayahs. Coverage: 114 surahs, five translations. Quran 49:12 returned English/Bengali/Japanese translations. Al-Qalam scan section returned five original images including p566.gif. Surah 25 catalogue returned five reciter tracks. Famous HTML, print preview and PDF utility all returned HTTP 200.
+- Live browser: Atlas reader opened Quran 68:7, Famous Quran opened with its original media/study navigation, and all five Furqan scans loaded with shared annotation + print toolbars. Local mouse marks persisted through reload. Final browser PDF action reported successful generation; optional notes appeared separately. The popup produced an Electron host warning, not an app-script exception. Native print dialogue/physical printer were not inspectable.
+- A requested viewport override did not apply to the QA tab (it remained 1280px); do not count that as a new phone-size pass. Earlier reader responsive checks predate the shared annotation toolbar. CSS wraps the new controls, but physical iPad/Pencil and current small-screen interaction still need a device check.
+- Supabase Site URL saved as https://famous-quran.vercel.app. Public sign-in remains pending and the live account dialog says so. No new users or login credentials created during production QA.
+- Remaining: obtain policy approval, complete Google OAuth and verify a real account across both areas; optionally configure SMTP. Production editorial write service is not enabled. Combined account JSON export exists; generic combined-backup import has not been added (the validated Atlas Sources restore remains available).

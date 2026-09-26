@@ -2,7 +2,9 @@
 
 The user now explicitly authorized free live deployment, merging Famous Quran, page annotations, and private account sync. This supersedes older deployment restrictions below. Current code uses Next.js on Node 24 for Vercel; immutable source corpus is compressed in Git and verified/decompressed at build. Famous Quran is preserved under vendor/famous-quran and integrated at /famous/index.html. Supabase project qzamdjcguksgzqcdaosd in Black Choco is approved for Quran data. See docs/MERGE_DEPLOYMENT.md for current activation and verification status.
 
-# Resume Ayah Atlas from this checkpoint
+# Historical recovery checkpoint — September 20
+
+The sections below describe the earlier local-only release. Its Vinext commands, deployment restrictions and device-only account status are historical. Use the current README and docs/MERGE_DEPLOYMENT.md for the Next.js merged deployment.
 
 ## User intent and stopping point
 

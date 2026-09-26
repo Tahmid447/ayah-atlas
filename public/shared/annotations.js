@@ -79,15 +79,16 @@
         const context=out.getContext('2d');context.fillStyle='#fff';context.fillRect(0,0,out.width,out.height);context.drawImage(img,0,0,out.width,out.height);
         for(const stroke of state.strokes)paint(context,stroke,out.width,out.height);
         const png=out.toDataURL('image/png');
-        const preview=window.open('','_blank');if(!preview){message('Allow the print preview to open, then try again.');return;}
-        preview.opener=null;
-        preview.document.write('<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Marked Quran page · print preview</title><style>body{margin:0;background:#e8ede8;color:#203b35;font:15px/1.5 system-ui}nav{padding:18px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}button{padding:10px 18px;border:0;border-radius:8px;background:#244d40;color:white;cursor:pointer;font:inherit}.sheet{box-sizing:border-box;width:190mm;height:277mm;padding:0;margin:20px auto;background:white;display:flex;align-items:center;justify-content:center}.sheet img{display:block;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}.notes{display:none;max-width:190mm;margin:20px auto;background:white;padding:20px;box-sizing:border-box;white-space:pre-wrap}.include-notes .notes{display:block}.hint{margin:0 18px} @page{size:A4 portrait;margin:10mm}@media print{body{background:white}nav,.hint{display:none!important}.sheet{width:190mm;height:277mm;margin:0;break-inside:avoid;page-break-inside:avoid}.notes{break-before:page;margin:0;padding:0}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}</style></head><body><nav><strong>Marked page · print preview</strong><button id="print">Print / Save as PDF</button><label><input type="checkbox" id="notes"> Include notes on a separate page</label></nav><p class="hint">A4 portrait · the original page and your marks stay together. Turn off browser headers and footers for a clean copy.</p><main class="sheet"><img id="page" alt="Original Quran page with personal annotations"></main><section class="notes"><h1>My page notes</h1><p id="page-id"></p><p id="note-text"></p></section></body></html>');
-        preview.document.close();
-        preview.document.querySelector('#page').src=png;
-        preview.document.querySelector('#page-id').textContent=id+' · '+(state.memorization||'reading');
-        preview.document.querySelector('#note-text').textContent=state.note||'No page note added.';
-        preview.document.querySelector('#notes').onchange=e=>preview.document.body.classList.toggle('include-notes',e.target.checked);
-        preview.document.querySelector('#print').onclick=()=>preview.print();
+        const job=crypto.randomUUID();
+        const preview=window.open('/print.html?job='+encodeURIComponent(job),'_blank');
+        if(!preview){message('Allow the print preview to open, then try again.');return;}
+        const receive=event=>{
+          if(event.origin!==location.origin||event.source!==preview||event.data?.job!==job||event.data?.type!=='atlas-print-ready')return;
+          preview.postMessage({type:'atlas-print-page',job,png,id,note:state.note,memorization:state.memorization||'reading'},location.origin);
+          window.removeEventListener('message',receive);
+        };
+        window.addEventListener('message',receive);
+        setTimeout(()=>window.removeEventListener('message',receive),120000);
         message('Print preview opened with your marks. Notes are optional on a separate page.');
       } catch { message('The image publisher blocked print export. Your marks remain safe; open the same page in the Atlas reader to print.'); }
     };

@@ -1,20 +1,20 @@
 # Ayah Atlas
 
-**Recovery checkpoint — 20 September 2026.** A working local Quran reader, published-source research workspace, evidence notebook, and cited talk studio. Progress is checkpointed for recovery across account changes. The resumed recovery fixes and validation are complete; remaining product limitations are recorded explicitly below and in the verification report.
+**Unified workspace — 26 September 2026.** Quran reader, published-source research, notebook and talk studio, with Famous Quran recitations at `/famous/`. Both areas share original-page annotations and an account workspace. See [the merge and deployment record](docs/MERGE_DEPLOYMENT.md) for current deployment and account activation status; the September 20 recovery release remains preserved.
 
 Start with **[RESUME_HERE.md](RESUME_HERE.md)**. It records current state, outstanding work, verification, and recovery steps. The complete original brief is [PROJECT_SPEC.md](PROJECT_SPEC.md). This is a new project, unrelated to VideoScope.
 
 ## Run locally
 
-Requires Node 22.13+ (Node 24 recommended for the native TypeScript test runner), npm, and Python 3. The delivered recovery archive includes the validated corpus; a source-only Git clone needs the data archive from the private GitHub release.
+Requires Node 24 and npm. The current Git repository includes the compressed corpus in verified parts; the historical release also preserves raw publisher downloads. Python 3 is needed only for corpus maintenance and integrity scripts.
 
 ```sh
-npm run install:ci
-python3 scripts/bootstrap-local.py
-npm run dev -- --host 127.0.0.1 --port 4173
+npm ci
+node scripts/prepare-deployment.mjs
+npm run dev -- --hostname 127.0.0.1 --port 4173
 ```
 
-Open http://localhost:4173. No external API key is required. The development server was left running at checkpoint time; do not start a duplicate if that URL already works.
+Open http://localhost:4173. No external AI API key is required. Check for an existing server before starting a duplicate.
 
 Production build and local production server:
 
@@ -39,9 +39,9 @@ See [data/coverage.json](data/coverage.json), the Sources screen, and [docs/TYPO
 
 Published text is immutable. Search normalization is derived. There are no generated Quran translations or fabricated hadith grades. No scholar review is claimed. The software checks exact text and references; it does not certify semantic support or adjudicate interpretations.
 
-Notes and talks stay in the browser. Sources → **Export device backup** preserves them as JSON before switching accounts or devices. **Restore device backup** verifies source content and merges notes while retaining an existing draft. `docs/test-results/device-workspace.json` contains the checkpoint's example notebook and talk. Server caches contain public source content only. Editorial tokens are server-side and never saved in browser storage.
+Guest notes and talks stay in the browser. Accounts use separate device caches and private Supabase rows; guest work is copied into an account only by an explicit choice. Public sign-in activation is tracked in the merge record. Account & sync offers a combined JSON export; Sources retains its validated Atlas backup restore. `docs/test-results/device-workspace.json` contains the historical example notebook and talk. Source content remains immutable; production editorial writes are not enabled.
 
-No production website was deployed. No paid service, billing change, or external AI call was made. The private GitHub repository/release is a recovery backup, not a published website.
+Hosting uses the existing Famous Quran Vercel Hobby project, with no paid upgrade or external AI calls. The private source repository and recovery release are separate from the public website.
 
 ## Development
 

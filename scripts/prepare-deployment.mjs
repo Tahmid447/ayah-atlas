@@ -11,7 +11,7 @@ for (const script of ['build.mjs', 'upgrade.mjs', 'community-build.mjs'])
   execFileSync(process.execPath, [script], { cwd: 'vendor/famous-quran', stdio: 'inherit' });
 fs.mkdirSync('public/famous', { recursive: true });
 const assetNames=fs.readdirSync('vendor/famous-quran/public');
-const mergedRevision=createHash('sha256').update(fs.readFileSync(import.meta.filename)).update(fs.readFileSync('public/shared/workspace.js')).update(fs.readFileSync('public/shared/annotations.js')).digest('hex').slice(0,16);
+const mergedRevision=createHash('sha256').update(fs.readFileSync(import.meta.filename)).update(fs.readFileSync('public/shared/workspace.js')).update(fs.readFileSync('public/shared/annotations.js')).update(fs.readFileSync('public/shared/famous-bridge.js')).digest('hex').slice(0,16);
 for (const name of assetNames) {
   let data = fs.readFileSync(path.join('vendor/famous-quran/public', name));
   if (/\.(html|js|css|webmanifest)$/.test(name)) {

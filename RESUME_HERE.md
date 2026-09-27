@@ -1,6 +1,6 @@
 # Latest update — September 27
 
-Reader first visits now start at Al-Fatiha; saved positions resume. A prominent Famous Quran link and standalone `/studio.html?surah=67` annotation studio were added. Studio drafts are separate device copies, with explicit per-page Apply to reader, export, navigation and undoable Clear marks. Google policy acceptance and OAuth client creation/configuration were explicitly approved by the user; the provider is enabled in the approved Supabase project and production audience setup is being finalized. See the September 27 section of docs/MERGE_DEPLOYMENT.md. Earlier pending-policy instructions below are historical.
+Reader first visits now start at Al-Fatiha; saved positions resume. A prominent Famous Quran link and standalone `/studio.html?surah=67` annotation studio were added. Studio drafts are separate device copies, with explicit per-page Apply to reader, export, navigation and undoable Clear marks. Google policy acceptance and OAuth client creation/configuration were explicitly approved by the user; the provider is enabled in the approved Supabase project and Google audience is In production. Live Black Choco sign-in succeeded and a reversible preference change synced successfully. See the September 27 section of docs/MERGE_DEPLOYMENT.md. Earlier pending-policy instructions below are historical.
 
 # Active merge and deployment — 2026-09-26
 

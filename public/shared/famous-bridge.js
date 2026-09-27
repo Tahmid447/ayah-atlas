@@ -9,5 +9,6 @@
   }
   const observer=new MutationObserver(annotate);observer.observe(document.body,{childList:true,subtree:true});annotate();
   Q.account=()=>AtlasWorkspace.open();
+  document.querySelector('#accountOpen').onclick=Q.account;
   window.addEventListener('atlas-workspace-change',e=>{if(e.detail?.key?.startsWith('fq'))Q.favs=new Set(Q.get('fqFav',[]));});
 })();

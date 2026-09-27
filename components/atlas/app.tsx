@@ -92,7 +92,7 @@ function Workspace() {
   );
   const [lensTab, setLensTab] = useState("translation");
   const [theme, setTheme] = useLocal("atlas.theme", "light");
-  const [position, setPosition] = useLocal("atlas.position", "68:7");
+  const [position, setPosition] = useLocal("atlas.position", "1:1");
   const [bookmarks, setBookmarks] = useLocal<string[]>("atlas.bookmarks", []);
   const [items, setItems] = useLocal<SavedEvidence[]>("atlas.notebook", []);
   const [talk, setTalk] = useLocal<Talk>("atlas.talk", defaultTalk);
@@ -264,7 +264,7 @@ function Workspace() {
               ))}
             </SidebarMenu>
           </SidebarGroup>
-          <a className="atlas-famous-link" href="/famous/index.html"><Mic2 size={18}/> Famous Quran · Recitations</a>
+          <a className="atlas-famous-link" href="/famous/index.html"><Mic2 size={22}/><span><strong>Famous Quran</strong><small>Recitations & study library →</small></span></a>
           <SidebarGroup className="bookmarks-group">
             <p className="sidebar-label">
               {t.bookmarks}

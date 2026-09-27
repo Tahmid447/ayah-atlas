@@ -32,3 +32,19 @@ test('annotation payload rejects invalid coordinates and script-valued colors',(
  const value={version:1,note:'study',strokes:[{tool:'pen',color:'#243c3a',width:3,points:[{x:.2,y:.3,p:.7}]}]};assert.equal(a.valid(value),true);value.strokes[0].points[0].x=Infinity;assert.equal(a.valid(value),false);value.strokes[0].points[0].x=.2;value.strokes[0].color='url(script)';assert.equal(a.valid(value),false);
  assert.equal(a.distance({x:.5,y:.5},{x:0,y:.5},{x:1,y:.5},1.5),0);
 });
+
+test('surah studio stays separate until explicit apply and protects newer reader marks',()=>{
+ const window={};vm.runInNewContext(fs.readFileSync('public/shared/studio-store.js','utf8'),{window});
+ const values=new Map([['page','original']]),drafts=new Map();
+ const storage=m=>({getItem:k=>m.get(k)??null,setItem:(k,v)=>m.set(k,v)});
+ const reader=storage(values),local=storage(drafts),studio=window.AtlasStudioStore(reader,local,'A/67/');
+ assert.equal(studio.getItem('page'),'original');studio.setItem('page','draft');assert.equal(reader.getItem('page'),'original');
+ studio.apply('page');assert.equal(reader.getItem('page'),'draft');
+ studio.setItem('page','next draft');reader.setItem('page','newer reader marks');assert.throws(()=>studio.apply('page'),/newer marks/);assert.equal(reader.getItem('page'),'newer reader marks');
+ const other=window.AtlasStudioStore(reader,local,'B/67/');assert.equal(other.getItem('page'),'newer reader marks');assert.equal(studio.getItem('page'),'next draft');
+});
+test('an untouched reader page is equivalent to an absent page when applying a draft',()=>{
+ const window={};vm.runInNewContext(fs.readFileSync('public/shared/studio-store.js','utf8'),{window});
+ let value=null;const values=new Map(),reader={getItem:()=>value,setItem:(_,v)=>{value=v;}},local={getItem:k=>values.get(k)??null,setItem:(k,v)=>values.set(k,v)};
+ const studio=window.AtlasStudioStore(reader,local,'draft/');studio.getItem('page');studio.setItem('page','marked draft');value=JSON.stringify({version:1,strokes:[],note:'',memorization:'reading'});studio.apply('page');assert.equal(value,'marked draft');
+});

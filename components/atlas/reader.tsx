@@ -64,7 +64,7 @@ export function Reader({
   });
   const [size, setSize] = useLocal("atlas.arabicSize", 32);
   const [spacing, setSpacing] = useLocal("atlas.lineSpacing", 2.25);
-  const [imageIndex, setImageIndex] = useLocal("atlas.pageImage", 2);
+  const [imageIndex, setImageIndex] = useLocal("atlas.pageImage", 0);
   const [surahQuery, setSurahQuery] = useState("");
   const [pageZoom, setPageZoom] = useState(false);
   useEffect(() => {
@@ -123,6 +123,7 @@ export function Reader({
   }
   return (
     <div className="reader-view">
+      <a className="recitation-banner" href="/famous/index.html"><span>FAMOUS QURAN</span><strong>Listen to recitations & explore the study library</strong><ArrowUpRight size={20}/></a>
       <div className="page-heading">
         <div>
           <p className="eyebrow">{t.library}</p>
@@ -338,6 +339,7 @@ export function Reader({
             {mode === "page" ? (
               <>
                 <div className="raster-tools">
+                  <a className="studio-open" href={"/studio.html?surah=" + s} target="_blank" rel="noopener">Open full-surah annotation studio ↗</a>
                   <span>
                     <span className="small-diamond">◇</span>
                     {t.rasterFaithful}

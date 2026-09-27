@@ -2,7 +2,7 @@
 
 **Unified workspace — 26 September 2026.** Quran reader, published-source research, notebook and talk studio, with Famous Quran recitations at `/famous/`. Both areas share original-page annotations and an account workspace. See [the merge and deployment record](docs/MERGE_DEPLOYMENT.md) for current deployment and account activation status; the September 20 recovery release remains preserved.
 
-Live: **https://famous-quran.vercel.app/** · Recitations: **https://famous-quran.vercel.app/famous/index.html**. Vercel Hobby, no paid upgrade. Public account sign-in awaits Google setup; guest reading, notes and annotations work now.
+Live: **https://famous-quran.vercel.app/** · Recitations: **https://famous-quran.vercel.app/famous/index.html**. Vercel Hobby, no paid upgrade. Google sign-in is configured through the approved Supabase project. Guest reading, notes and annotations remain available without an account. Open a surah’s annotation studio for a separate device copy; use Apply to reader only when you want those marks in your personal reader.
 
 Start with **[RESUME_HERE.md](RESUME_HERE.md)**. It records current state, outstanding work, verification, and recovery steps. The complete original brief is [PROJECT_SPEC.md](PROJECT_SPEC.md). This is a new project, unrelated to VideoScope.
 
